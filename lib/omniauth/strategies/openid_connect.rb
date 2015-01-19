@@ -219,7 +219,7 @@ module OmniAuth
       def parse_jwk_key(uri)
         key = open(uri).read
         json = JSON.parse(key)
-        jwk = json['keys'].first
+        jwk = json['keys'].second
         create_rsa_key(jwk['n'], jwk['e'])
       end
 
